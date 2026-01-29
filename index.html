@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>מספרייה - המקום שבו מספרי נהיים חוויה</title>
+    <title>מספרייה - משחקי חשבון</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +29,7 @@
               'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
               'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
               'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'vanish': 'vanish 0.5s forwards',
             },
             keyframes: {
               pop: {
@@ -40,6 +41,10 @@
                 '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
                 '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
                 '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              vanish: {
+                '0%': { transform: 'scale(1)', opacity: '1' },
+                '100%': { transform: 'scale(0)', opacity: '0' }
               }
             }
           }
@@ -53,7 +58,6 @@
         color: #f8fafc;
       }
       
-      /* 3D Button Effect */
       .btn-3d {
         transition: all 0.1s;
         transform: translateY(0);
@@ -65,11 +69,22 @@
         margin-top: 4px;
       }
 
-      /* Game Card Glassmorphism */
       .glass-card {
         background: rgba(30, 41, 59, 0.7);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Card Flip Utilities */
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
       }
 
       .no-scrollbar::-webkit-scrollbar {
@@ -95,6 +110,6 @@
 </head>
   <body>
     <div id="root"></div>
-        <script type="module" src="index.tsx"></script>
+            <script type="module" src="index.tsx"></script>
   </body>
 </html>
