@@ -12,7 +12,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ setPage, currentPage, userStats, onOpenSettings }) => {
   const navItems: { id: Page; label: string; icon: React.ReactNode }[] = [
     { id: 'home', label: 'לובי', icon: <Home size={20} /> },
-    { id: 'game', label: 'ארקייד', icon: <Gamepad2 size={20} /> },
+    { id: 'game', label: 'משחקים', icon: <Gamepad2 size={20} /> },
     { id: 'tutor', label: 'בוט', icon: <Bot size={20} /> },
     { id: 'lab', label: 'מעבדה', icon: <FlaskConical size={20} /> },
     { id: 'progress', label: 'פרופיל', icon: <LayoutDashboard size={20} /> },
