@@ -1,6 +1,6 @@
 import React from 'react';
 import { Page, UserStats } from '../types';
-import { Home, Gamepad2, Bot, LayoutDashboard, FlaskConical, Award, Coins, Key } from 'lucide-react';
+import { Home, Gamepad2, Bot, LayoutDashboard, FlaskConical, Coins, Key } from 'lucide-react';
 
 interface NavbarProps {
   setPage: (page: Page) => void;
@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, currentPage, userStats, onOpen
                 <h1 className="font-black text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 tracking-tight" style={{textShadow: '0 0 20px rgba(168, 85, 247, 0.5)'}}>
                     מספרייה
                 </h1>
-                <span className="text-xs text-slate-400 font-mono">ARCADE EDITION</span>
+                <span className="text-xs text-slate-400 font-mono">לומדים בכיף</span>
             </div>
           </div>
 
@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ setPage, currentPage, userStats, onOpen
              <button 
                 onClick={onOpenSettings}
                 className="p-2 rounded-xl bg-slate-800 border-b-4 border-slate-950 text-yellow-500 hover:bg-slate-700 hover:text-yellow-400 transition-all active:translate-y-1 active:border-b-0"
-                title="הגדרת מפתח API"
+                title="הגדרת מנוע AI"
              >
                  <Key size={20} />
              </button>
