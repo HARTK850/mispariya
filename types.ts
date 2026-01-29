@@ -14,7 +14,7 @@ export enum Topic {
   FRACTIONS = 'שברים'
 }
 
-export type GameMode = 'quiz' | 'speed' | 'tower';
+export type GameMode = 'quiz' | 'speed' | 'tower' | 'memory';
 
 export interface TopicStats {
   correct: number;
@@ -47,4 +47,14 @@ export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
   isLoading?: boolean;
+}
+
+// Interface for Memory Card
+export interface MemoryCard {
+  id: string;
+  content: string; // "3 + 4" or "7"
+  type: 'problem' | 'answer';
+  pairId: string; // The ID connecting the problem to the answer
+  isFlipped: boolean;
+  isMatched: boolean;
 }
